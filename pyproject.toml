@@ -1,0 +1,17 @@
+[project]
+name = "hpc-dag-monitor"
+version = "0.1.0"
+description = "MVP: DAG orchestration + Prometheus metrics (Slurm-style), Azure-ready"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "fastapi==0.115.6",
+  "uvicorn[standard]==0.34.0",
+  "pydantic==2.10.6",
+  "pyyaml==6.0.2",
+  "prometheus-client==0.21.1",
+  "psutil==6.1.1",
+]
+
+[tool.uv]
+# This project intentionally targets stable CPython (3.12/3.13). Pydantic-core may not build on 3.14 yet.
+

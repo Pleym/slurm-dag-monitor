@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: dagmon
+    metrics_path: /metrics
+    static_configs:
+      # macOS Docker -> host network via host.docker.internal
+      - targets: ["host.docker.internal:8000"]

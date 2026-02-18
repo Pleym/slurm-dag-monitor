@@ -1,0 +1,20 @@
+[
+  {
+    "max_concurrency": 1,
+    "run_id": "1eb992f4b74d4145ba42b47dbca5ff37",
+    "status": "succeeded",
+    "makespan_s": 4.068223,
+    "baseline_s": 4.068223,
+    "speedup": 1.0,
+    "efficiency": 1.0
+  },
+  {
+    "max_concurrency": 2,
+    "run_id": "841e47be767740418473d74ccf25c0e0",
+    "status": "succeeded",
+    "makespan_s": 3.039402,
+    "baseline_s": 4.068223,
+    "speedup": 1.3384945459666078,
+    "efficiency": 0.6692472729833039
+  }
+]

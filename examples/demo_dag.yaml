@@ -1,0 +1,19 @@
+name: demo
+version: 1
+max_concurrency: 2
+
+tasks:
+  - id: load
+    command: "python -c 'import time; time.sleep(0.1); print(\"loaded\")'"
+
+  - id: compute_1
+    depends_on: [load]
+    command: "python -c 'import math; s=0.0\nfor i in range(6000000):\n  x=(i+1)*1e-6\n  s += math.sin(x)*math.cos(x) + math.sqrt(x)\nprint(s)'"
+
+  - id: compute_2
+    depends_on: [load]
+    command: "python -c 'import math; s=0.0\nfor i in range(6000000):\n  x=(i+1)*1e-6\n  s += math.sin(x)*math.cos(x) + math.sqrt(x)\nprint(s)'"
+
+  - id: aggregate
+    depends_on: [compute_1, compute_2]
+    command: "python -c 'print(\"aggregated\")'"
